@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
 }
 
 body {
@@ -10,9 +12,7 @@ body {
   line-height: 1.5;
 }
 
-#search-box {
-  font: inherit;
-  padding: 8px;
-  max-width: 320px;
-  margin-bottom: 16px;
+ul {
+  padding-left: 20px;
+  list-style: none;
 }
