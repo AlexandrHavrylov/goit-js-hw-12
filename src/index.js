@@ -32,24 +32,24 @@ function countriesMarkup(name) {
 
 function getMarkup(country) {
       if (!country) {
-          refs.countryList.innerHTML = '';
-          refs.countryInfo.innerHTML = '';
+           clearMarkup()
           Notiflix.Notify.failure('Oops, there is no country with that name')
        return
         }
      
         if (country.length === 1) {
-            refs.countryList.innerHTML = ''
+            clearMarkup()
             const markup = countryTmp(country)
             refs.countryInfo.innerHTML = markup
         }
     
-        if (country.length > 10) {
+    if (country.length > 10) {
+        clearMarkup()
          Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
          
     }
     if (country.length > 1 && country.length <= 10) {
-        refs.countryInfo.innerHTML = ''
+        clearMarkup()
         const markup = countryListTmp(country)
         refs.countryList.innerHTML = markup
     }
@@ -58,4 +58,7 @@ function getMarkup(country) {
 }
 
 
-
+function clearMarkup() {
+    refs.countryInfo.innerHTML = ''
+    refs.countryList.innerHTML =''
+}
