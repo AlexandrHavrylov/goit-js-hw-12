@@ -18,7 +18,7 @@ const refs = {
 refs.input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY))
 
 function onInput() {
-    const countryToFind = refs.input.value;
+    const countryToFind = refs.input.value.trim();
     if (!countryToFind) {
         refs.countryList.innerHTML = '';
     }
